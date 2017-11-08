@@ -1,10 +1,13 @@
 api-playground-AndrewJBeers
 topics to choose from:
 
-Chuck Norris DB 
-    http://www.icndb.com/api/
-MTG DB
-    http://magicthegathering.io/
-NASA DB
-    https://api.nasa.gov/
+
+Trump Quotes
+https://docs.tronalddump.io/#search-quotes
+
+
+add stuff for  get random quote
+add stuff for show tags
+
+    clickable get tag
 
