@@ -8,7 +8,8 @@
     <title>API STUFF</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
 
 </head>
 
@@ -17,10 +18,15 @@
 <body>
     <div class="container-fluid">
         <div id="app">
-            <button class="btn btn-primary" :disabled="loading" @click="loadCards">
+            <button class="btn btn-primary" :disabled="loading" @click="loadQuote">
                 <i class="fa fa-spinner fa-spin" v-if="loading"></i>
-                Load Cards
+                Load Quote
             </button>
+            <ul class="list-group" v-if="showing == 'quotes'">
+                <li class="list-group-item" v-for="quote in quotes" :key="quote_id" @click="selectQuote(quote)">
+                    {{ quote.tags }}  {{ quote.value }} 
+                </li>
+            </ul>
 
 
         </div>
@@ -35,11 +41,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="Vue.js"></script>
-    <script src="Vue.js"></script>
     <!-- Javascript link -->
-    <script src="https://unpkg.com/vue"></script>
+    <script src="Vue.js"></script> 
     <!-- Vue link -->
+ <script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-resource@1.3.4/dist/vue-resource.min.js"></script>
+
 </body>
 
 </html>

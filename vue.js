@@ -3,27 +3,32 @@ $(function () {
         el: '#app',
         data: {
             loading: false,
+            showing: 'quotes',
+            quotes: [],
+            quote: null
 
-
+            // curl --request GET \            PROBLEM WITH A NO HEADER THING screenshot in Capture.JPG
+            // --url 'https://api.tronalddump.io/random/quote' \
+            // --header 'accept: application/hal+json'
 
         },
         computed: {
 
         },
         methods: {
-            loadCards() {
+            loadQuote() {
                 this.loading = true
-                this.$http.get('http://api.magicthegathering.io/v1/cards')
+                this.$http.get('https://api.tronalddump.io/random/quote')
                     .then(resp => {
-                        this.cards = resp.body
+                        this.quotes = resp.body
                         this.loading = false
                     })
-            }
-
-
-
-
-
+            },
+            // selectQuote(quote) {
+            //     this.quote = quote
+            //     this.showing = '~~~~~'
+            //     this.loading = false
+            // }
 
         }
     })
